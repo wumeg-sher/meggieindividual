@@ -32,7 +32,6 @@ if($row ){
     $_SESSION['loggedIn'] = true;
     $_SESSION['username'] = $row['username'];
     $_SESSION['userId'] = $row['userId'];
-    $_SESSION['tier'] = $row['tier'];
     
     ?>
     <article>Logged in! <?= $row['username'] ?>
