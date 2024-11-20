@@ -7,7 +7,7 @@ $password=$_POST["password"];
 
 
 //connect
-$dsn = "mysql:host=localhost;dbname=contactinfo;charset=utf8mb4";
+$dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
 
 $dbusername = "root"; 
 $dbpassword = "";  
@@ -28,14 +28,15 @@ $stmt->execute();
 
 $row = $stmt->fetch();
 
+
 if($row ){ 
     $_SESSION['loggedIn'] = true;
     $_SESSION['username'] = $row['username'];
     $_SESSION['userId'] = $row['userId'];
     
     ?>
-    <article>Logged in! <?= $row['username'] ?>
-        <a href="home.php">View records</a>
+    <article>Logged <?= $row['username'] ?> in!
+        <a href="home.php">Continue</a>
     </article>
 <?php } else { ?>
     <article>Wrong username or password</article>
@@ -52,6 +53,15 @@ if($row ){
     <title>Login screen</title>
 </head>
 <body>
+<h1>Agu's yarn stash</h1>
+
+
+<div id="menu">
+<img src="assets/mao.png">
+<img src="assets/lineyarn.png">
+
+</div>
+
     
 </body>
 </html>
