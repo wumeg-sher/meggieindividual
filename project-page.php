@@ -42,19 +42,20 @@ $stmt->execute();
 <h1>Agu's yarn stash</h1>
 
 <div id="menu">
-<img id="cat" src="assets/mao.png">
+<img src="assets/mao.png">
 <img src="assets/lineyarn.png">
 </div>
 
-    <h1>Yarn stash</h1>
+
+<h1>Project Page</h1>
 
     <article>
         Logged in as <?=$_SESSION['username']?>
     </article>
 
     <article>
-    <a href="insert-newYarn.php">Add new entry</a>
-    <a href="project-page.php">Project page</a>
+    <a href="insert.php">Add new entry</a>
+    <a href="home.php">Yarn page</a>
     <ul>
         <?php
         while($row = $stmt-> fetch()) {
@@ -84,8 +85,15 @@ $stmt->execute();
 
 
 <?php }else{ ?>
+    <img src="assets/duck.png">
+    <p>This page is protected by Mister Duck.</p>
     <h1>Access denied, please log in to see this page<h1>
-    <article> <a href="login.php">Log in here</a>
+    <article> 
+        <a href="login.php">Log in here</a>
+
+        <img src="assets/duck.png">
+        <p>Or else Mister Duck will get you.</p>
+
     </article>
     <?php } ?>
 

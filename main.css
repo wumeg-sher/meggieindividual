@@ -1,9 +1,21 @@
 #menu {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 
 #footer {
-    background-color: azure;
+    background-color: papayawhip;
 }
+
+/* body {
+    background-image: url("assets/bg.jpeg");
+    background-repeat: no-repeat;
+    background-color: gray;
+
+    font-family: "Quicksand", "sans-serif";
+  } */
+
+  #cat {
+    width: 40%;
+  }

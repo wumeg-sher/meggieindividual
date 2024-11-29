@@ -1,5 +1,5 @@
 <?php
-//login form 
+//login form, also landing page
 ?>
 
 
