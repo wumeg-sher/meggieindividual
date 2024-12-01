@@ -1,16 +1,16 @@
 <?php session_start();
 //process login
 
+include("html-head.php");
+
 $username=$_POST["username"];
 $password=$_POST["password"];
-
-
 
 //connect
 $dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
 
 $dbusername = "root"; 
-$dbpassword = "";  
+$dbpassword = "root";  
 $pdo = new PDO($dsn, $dbusername, $dbpassword); 
 
 
@@ -44,14 +44,6 @@ if($row ){
 
 
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    
-    <title>Login screen</title>
-</head>
 <body>
 <h1>Agu's yarn stash</h1>
 
@@ -59,8 +51,11 @@ if($row ){
 <div id="menu">
 <img src="assets/mao.png">
 <img src="assets/lineyarn.png">
-
 </div>
+
+<?php
+include ("footer.php")
+?>
 
     
 </body>

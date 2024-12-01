@@ -1,5 +1,7 @@
 <?php session_start();
 
+include("html-head.php");
+
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 //URL data
@@ -9,7 +11,7 @@ $yarnId=$_GET["pid"];
 $dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
 
 $dbusername = "root"; 
-$dbpassword = "";  
+$dbpassword = "root";  
 $pdo = new PDO($dsn, $dbusername, $dbpassword); 
 
 
@@ -20,17 +22,14 @@ $stmt = $pdo -> prepare("SELECT * FROM `yarn` WHERE `yarnId`=$yarnId;");
 $stmt->execute();
 
 //process 
-
-
 ?>
 
 
 <body>
-
 <h1>Update record</h1>
 
 <article>
-<a href="home.php">Home</a>
+<a href="home.php">Back</a>
 
 <p>Updating the following information:</p>
 <?php if($row = $stmt->fetch()) { ?>
@@ -73,12 +72,15 @@ $stmt->execute();
 <input type="submit" value="Update">
 </fieldset>
 </article>
+
+<?php }else{ 
+    include("access-denied.php");
+    } 
+    
+include("footer.php"); 
+?>
     
 </body>
 </html>
 
-<?php }else{ ?>
-    <h1>Access denied, please log in to see this page<h1>
-    <article> <a href="login-form">Log in here</a>
-    </article>
-    <?php } ?>
+

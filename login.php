@@ -1,19 +1,10 @@
 <?php
 //login form, also landing page
+
+include("html-head.php");
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js" ></script>
-    <script> 
-      $(function(){ $("head").load("header.html") });
-    </script>
-    
-    <title>Login form </title>
-</head>
 <body>
 
     <h1>Agu's yarn stash</h1>
@@ -37,6 +28,10 @@
     </form>
     </fieldset>
     </article>
+
+    <?php
+    include ("footer.php");
+    ?>
 
     
 </body>

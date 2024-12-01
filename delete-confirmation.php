@@ -1,15 +1,7 @@
 <?php session_start();
 //shows information to be deleted and confirmation 
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <title>Delete Confirmation</title>
-</head>
-
-<?php
+include("html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
@@ -20,7 +12,7 @@ $yarnId = $_GET["pid"];
 $dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
 
 $dbusername = "root"; 
-$dbpassword = "";  
+$dbpassword = "root";  
 $pdo = new PDO($dsn, $dbusername, $dbpassword); 
 
 
@@ -59,11 +51,17 @@ $stmt->execute();
         <input type= "submit" value="YES">
     </form>
     </article>
+
+
+    <?php }else{ 
+    include("access-denied.php");
+    } 
+    
+    include("footer.php");
+    ?>
+
     
 </body>
 </html>
 
-<?php }else{ ?>
-	<h1>Access denied. Please log in to see this page.</h1>
-	<article><a href="login.php">Click here to log in</a></article>
-<?php } ?>
+

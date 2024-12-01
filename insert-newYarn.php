@@ -1,5 +1,7 @@
 <?php session_start();
 
+include("html-head.php");
+
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 
@@ -7,7 +9,7 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 $dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
 
 $dbusername = "root"; 
-$dbpassword = "";  
+$dbpassword = "root";  
 $pdo = new PDO($dsn, $dbusername, $dbpassword); 
 
 
@@ -58,12 +60,16 @@ $stmt->execute();
 <input type="submit" value="Submit">
 </fieldset>
 </article>
+
+
+<?php }else{ 
+    include("access-denied.php");
+    } 
+
+    include("footer.php");
+?>
     
 </body>
 </html>
 
-<?php }else{ ?>
-    <h1>Access denied, please log in to see this page<h1>
-    <article> <a href="login-form">Log in here</a>
-    </article>
-    <?php } ?>
+

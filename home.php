@@ -1,6 +1,8 @@
 <?php session_start();
 //process login
 
+include("html-head.php");
+
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
@@ -9,7 +11,7 @@ $userId = $_SESSION['userId'];
 $dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
 
 $dbusername = "root"; 
-$dbpassword = "";  
+$dbpassword = "root";  
 $pdo = new PDO($dsn, $dbusername, $dbpassword); 
 
 
@@ -24,18 +26,7 @@ $stmt->execute();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
-    <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js" ></script>
-    <script> 
-      $(function(){ $("head").load("header.html") });
-    </script>
-
-<link rel="stylesheet" href="main.css">
-
-</head>
 <body>
 
 
@@ -83,18 +74,14 @@ $stmt->execute();
 </html>
 
 
-<?php }else{ ?>
-    <h1>Access denied, please log in to see this page<h1>
-    <article> <a href="login.php">Log in here</a>
-    </article>
-    <?php } ?>
+<?php }else{ 
+    include("access-denied.php");
+    } 
+    
+    include("footer.php");
+    ?>
 
 
-
-    <section id="footer">
-        <p>Just a little site by Agu</p>
-        <p>Agu 2024</p>
-    </section>
     
 </body>
 </html>
