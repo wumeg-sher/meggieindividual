@@ -3,7 +3,7 @@
 
 require_once "dbsessions.php";
 include("html-head.php");
-include("menu.php");
+include("menu-noLinks.php");
 
 $username = $_POST["regUsername"];
 $password = $_POST["regPassword"];
@@ -29,7 +29,6 @@ $userCount = $stmt->fetchColumn();
         </article><?php
     } else {
     
-
     // Insert the new user into the database
     $stmt = $pdo->prepare("INSERT INTO `users` (`username`, `password`, `tier`) 
         VALUES (:username, :password, 'user')");
@@ -49,7 +48,6 @@ $userCount = $stmt->fetchColumn();
     </article>
 
     <?php } ?>
-
 
 <body>
 

@@ -15,7 +15,7 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 <h1>Add new yarn</h1>
 
 <article>
-<a href="home.php">Home</a>
+<a href="home.php">Back</a>
 </article>
 
 
@@ -53,6 +53,9 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
     include("access-denied.php");
     } 
 ?>
+
+
+<script src="insert-newYarn.js"></script>
     
 </body>
 </html>

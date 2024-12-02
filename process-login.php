@@ -21,13 +21,13 @@ $stmt->execute();
 
 $row = $stmt->fetch();
 
-include("menu.php");
+include("menu-noLinks.php");
 
 if($row ){ 
     $_SESSION['loggedIn'] = true;
     $_SESSION['username'] = $row['username'];
     $_SESSION['userId'] = $row['userId'];
-    
+    $_SESSION['tier'] = $row['tier'];
     ?>
     <article>Logged <?= $row['username'] ?> in!
         <a href="home.php">Continue</a>

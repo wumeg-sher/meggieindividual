@@ -1,3 +1,4 @@
+//button to show registration form on click
 document.addEventListener('DOMContentLoaded', ()=>{
     let showButton = document.getElementById('showButton');
     let registerForm = document.getElementById('registerForm');
