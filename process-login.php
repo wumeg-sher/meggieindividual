@@ -1,18 +1,11 @@
-<?php session_start();
+<?php 
 //process login
 
+require_once "dbsessions.php";
 include("html-head.php");
 
 $username=$_POST["username"];
 $password=$_POST["password"];
-
-//connect
-$dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
-
-$dbusername = "root"; 
-$dbpassword = "root";  
-$pdo = new PDO($dsn, $dbusername, $dbpassword); 
-
 
 //prepare
 $stmt = $pdo-> prepare("SELECT `username`, `userId`, `tier`
@@ -28,6 +21,7 @@ $stmt->execute();
 
 $row = $stmt->fetch();
 
+include("menu.php");
 
 if($row ){ 
     $_SESSION['loggedIn'] = true;
@@ -45,13 +39,7 @@ if($row ){
 
 
 <body>
-<h1>Agu's yarn stash</h1>
 
-
-<div id="menu">
-<img src="assets/mao.png">
-<img src="assets/lineyarn.png">
-</div>
 
 <?php
 include ("footer.php")

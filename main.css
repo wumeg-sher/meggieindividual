@@ -19,3 +19,23 @@
   #cat {
     width: 40%;
   }
+
+  #registerForm {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: none; 
+  }
+  fieldset {
+    padding: 15px;
+    border: 2px solid #ddd;
+  }
+  input[type="text"] {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+  }
+  input[type="submit"] {
+    padding: 8px 15px;
+    margin-top: 10px;
+  }

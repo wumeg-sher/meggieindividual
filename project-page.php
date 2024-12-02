@@ -1,6 +1,7 @@
-<?php session_start();
+<?php
 //process login
 
+require_once "dbsessions.php";
 include("html-head.php");
 
 
@@ -21,21 +22,13 @@ $stmt = $pdo -> prepare("SELECT * FROM `yarn`;");
 //execute
 $stmt->execute();
 
-//process 
-
-
 ?>
 
 
 <body>
 
 
-<h1>Agu's yarn stash</h1>
-
-<div id="menu">
-<img src="assets/mao.png">
-<img src="assets/lineyarn.png">
-</div>
+<?php include("menu.php"); ?>
 
 
 <h1>Project Page</h1>
@@ -45,7 +38,7 @@ $stmt->execute();
     </article>
 
     <article>
-    <a href="insert.php">Add new entry</a>
+    <a href="insert-newYarn.php">Add new entry</a>
     <a href="home.php">Yarn page</a>
     <ul>
         <?php
@@ -67,20 +60,14 @@ $stmt->execute();
             </li>
             <?php } ?>
     </ul>
-
     </article>
 
+<?php 
+    include("footer.php");
     
-</body>
-</html>
-
-
-<?php }else{
-    include("access-denied.php");
+    }else{
+        include("access-denied.php");
     } 
-    
-    
-    include ("footer.php");
     ?>
 
     

@@ -1,19 +1,12 @@
-<?php session_start();
+<?php
 
+require_once "dbsessions.php";
 include("html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 //URL data
 $yarnId=$_GET["pid"];
-
-//connect
-$dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
-
-$dbusername = "root"; 
-$dbpassword = "root";  
-$pdo = new PDO($dsn, $dbusername, $dbpassword); 
-
 
 //prepare
 $stmt = $pdo -> prepare("SELECT * FROM `yarn` WHERE `yarnId`=$yarnId;");
@@ -26,6 +19,9 @@ $stmt->execute();
 
 
 <body>
+
+<?php include("menu.php"); ?>
+
 <h1>Update record</h1>
 
 <article>
@@ -73,11 +69,12 @@ $stmt->execute();
 </fieldset>
 </article>
 
-<?php }else{ 
+<?php 
+include("footer.php");
+
+}else{ 
     include("access-denied.php");
     } 
-    
-include("footer.php"); 
 ?>
     
 </body>

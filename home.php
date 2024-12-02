@@ -1,41 +1,24 @@
-<?php session_start();
+<?php 
 //process login
 
+require_once "dbsessions.php";
 include("html-head.php");
-
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 $userId = $_SESSION['userId'];
-//connect
-$dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
-
-$dbusername = "root"; 
-$dbpassword = "root";  
-$pdo = new PDO($dsn, $dbusername, $dbpassword); 
-
 
 //prepare
 $stmt = $pdo -> prepare("SELECT * FROM `yarn`;");
 
 //execute
 $stmt->execute();
-
-//process 
-
-
 ?>
 
 
 <body>
-
-
-<h1>Agu's yarn stash</h1>
-
-<div id="menu">
-<img id="cat" src="assets/mao.png">
-<img src="assets/lineyarn.png">
-</div>
+    
+    <?php include("menu.php"); ?>
 
     <h1>Yarn stash</h1>
 
@@ -62,23 +45,18 @@ $stmt->execute();
                 <a href= "update-confirmation.php?pid=<?= $row["yarnId"]
                     ?> ">Update</a>
                 <?php } ?>
-            
             </li>
             <?php } ?>
     </ul>
-
     </article>
 
-    
-</body>
-</html>
 
+    <?php 
+    include("footer.php");
 
-<?php }else{ 
+    }else{ 
     include("access-denied.php");
     } 
-    
-    include("footer.php");
     ?>
 
 

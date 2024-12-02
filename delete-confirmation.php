@@ -1,20 +1,13 @@
-<?php session_start();
+<?php
 //shows information to be deleted and confirmation 
 
+require_once "dbsessions.php";
 include("html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 //recieve personId
 $yarnId = $_GET["pid"];
-
-//connect
-$dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
-
-$dbusername = "root"; 
-$dbpassword = "root";  
-$pdo = new PDO($dsn, $dbusername, $dbpassword); 
-
 
 //prepare
 $stmt = $pdo-> prepare("SELECT * FROM `yarn` WHERE `yarnId` = $yarnId;");
@@ -23,13 +16,12 @@ $stmt = $pdo-> prepare("SELECT * FROM `yarn` WHERE `yarnId` = $yarnId;");
 //execute
 $stmt->execute();
 
-
-
-
 ?>
 
 
 <body>
+
+<?php include("menu.php"); ?>
 
     <h1>Are you sure that you want to delete this entry?</h1>
     <article>
@@ -53,11 +45,12 @@ $stmt->execute();
     </article>
 
 
-    <?php }else{ 
-    include("access-denied.php");
-    } 
-    
+    <?php
     include("footer.php");
+
+    }else{ 
+    include("access-denied.php");
+    }  
     ?>
 
     

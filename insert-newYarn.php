@@ -1,31 +1,16 @@
-<?php session_start();
+<?php
 
+require_once "dbsessions.php";
 include("html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
-
-
-//connect
-$dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
-
-$dbusername = "root"; 
-$dbpassword = "root";  
-$pdo = new PDO($dsn, $dbusername, $dbpassword); 
-
-
-//prepare
-$stmt = $pdo -> prepare("SELECT * FROM `yarn` WHERE `yarnId`=$yarnId;");
-
-//execute
-$stmt->execute();
-
-//process 
-
 
 ?>
 
 
 <body>
+
+<?php include("menu.php"); ?>
 
 <h1>Add new yarn</h1>
 
@@ -35,7 +20,6 @@ $stmt->execute();
 
 
 <article>
-
 <fieldset>
     <legend>New Yarn</legend>
 
@@ -62,11 +46,12 @@ $stmt->execute();
 </article>
 
 
-<?php }else{ 
+<?php 
+    include("footer.php");
+    
+    }else{ 
     include("access-denied.php");
     } 
-
-    include("footer.php");
 ?>
     
 </body>
