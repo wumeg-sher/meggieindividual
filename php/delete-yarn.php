@@ -11,7 +11,7 @@ $pid = $_POST["pid"];
 $stmt = $pdo-> prepare("DELETE FROM `yarn` WHERE `yarn`.`yarnId` =$pid");
 
 
-include("../include/menu-noLinks.php");
+include("../include/menu.php");
 
 //execute
 if($stmt->execute()){ ?>

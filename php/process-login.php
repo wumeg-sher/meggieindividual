@@ -34,6 +34,7 @@ if($row ){
     </article>
 <?php } else { ?>
     <article>Wrong username or password</article>
+    <a href="login.php">Back</a>
 <?php } ?>
 
 

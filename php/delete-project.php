@@ -11,7 +11,7 @@ $pid = $_POST["pid"];
 $stmt = $pdo-> prepare("DELETE FROM `projects` WHERE `projects`.`projectId` =$pid");
 
 
-include("../include/menu-noLinks.php");
+include("../include/menu.php");
 
 //execute
 if($stmt->execute()){ ?>

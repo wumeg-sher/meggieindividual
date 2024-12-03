@@ -25,7 +25,8 @@ $stmt->execute();
 
     <h1>Are you sure that you want to delete this entry?</h1>
     <article>
-    <a href="home.php">Back</a>
+    <button onclick="location.href ='home.php';" class="menuButton">Back</button>
+
     <br>
     <?php if($row = $stmt->fetch()) { ?>
         Yarn: <?= $row["yarnType"] ?>

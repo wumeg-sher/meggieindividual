@@ -10,8 +10,10 @@ include("../include/menu-noLinks.php");
 <body>
 
     <article>
-    <p>Welcome to Agu's yarn catalog system </p>
-    <p>Please sign in </p>
+    <h3>Welcome to Agu's yarn catalog system </h3>
+    <p>This is where Agu takes stock of her yarn stash and projects so that she stops spending money on yarn </p>
+    <p>You are welcome to register with this site to make use of the catalog to keep track of your own yarn and projects as well </p>
+    <p>Please sign in to use this site </p>
     </article>
     
     <fieldset>
@@ -22,8 +24,8 @@ include("../include/menu-noLinks.php");
         <input type="submit">
     </form>
     </fieldset>
-
-    <button id="showButton">Register</button>
+<br>
+    <button id="showButton" class="loginButton">Register</button>
 
     <div id="registerForm">
         <form action="process-register.php" method="POST">
@@ -32,7 +34,7 @@ include("../include/menu-noLinks.php");
                 <input type="text" name="regUsername" placeholder="Username" required>
                 <input type="text" name="regPassword" placeholder="Password" required>
                 <input type="text" name="regConfirmPassword" placeholder="Confirm password" required>
-                <input type="submit">
+                <input type="submit" class="loginButton">
             </fieldset>
         </form>
     </div>

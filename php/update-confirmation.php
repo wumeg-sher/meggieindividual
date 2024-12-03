@@ -1,7 +1,7 @@
 <?php
 //page that allows user to enter yarn information to be updated to the db
 
-require_once ".../include/dbsessions.php";
+require_once "../include/dbsessions.php";
 include("../include/html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
@@ -26,7 +26,7 @@ $stmt->execute();
 <h1>Update record</h1>
 
 <article>
-<a href="home.php">Back</a>
+<button onclick="location.href ='home.php';" class="menuButton">Back</button>
 
 <p>Updating the following information:</p>
 <?php if($row = $stmt->fetch()) { ?>

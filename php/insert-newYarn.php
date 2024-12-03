@@ -16,9 +16,11 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 <h1>Add new yarn</h1>
 
 <article>
-<a href="home.php">Back</a>
+<button onclick="location.href ='home.php';" class="menuButton">Back</button>
 </article>
+<br>
 
+<p id="outputElement"></p>
 
 <article>
 <fieldset>

@@ -24,7 +24,7 @@ $stmt->execute();
 
     <h1>Are you sure that you want to delete this entry?</h1>
     <article>
-    <a href="project-page.php">Back</a>
+    <button onclick="location.href ='project-page.php';" class="menuButton">Back</button>
     <br>
 
     <?php if($row = $stmt->fetch()) { ?>

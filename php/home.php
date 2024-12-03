@@ -27,8 +27,8 @@ $stmt->execute();
     </article>
 
     <article>
-    <a href="insert-newYarn.php">Add new entry</a>
-    <a href="project-page.php">Project page</a>
+    <button onclick="location.href ='insert-newYarn.php';" class="menuButton">Add new yarn entry</button>
+    <button onclick="location.href ='project-page.php';" class="menuButton">Project page</button>
     </article>
 
     <div>

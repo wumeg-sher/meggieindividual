@@ -3,7 +3,8 @@
     </h1>
 </div>
 
-<div id="menu">
+<div id="menupics">
 <img src="../assets/mao.png">
 <img src="../assets/lineyarn.png">
 </div>
+

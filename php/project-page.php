@@ -21,8 +21,8 @@ $userId = $_SESSION['userId'];
     </article>
 
     <article>
-    <a href="insert-newProject.php">Add new entry</a>
-    <a href="home.php">Yarn page</a>
+    <button onclick="location.href ='insert-newProject.php';" class="menuButton">Add new project entry</button>
+    <button onclick="location.href ='home.php';" class="menuButton">Yarn page</button>
     </article>
 
     <div>

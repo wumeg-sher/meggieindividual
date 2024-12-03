@@ -24,7 +24,8 @@ $stmt->execute();
 <h1>Update record</h1>
 
 <article>
-<a href="home.php">Back</a>
+<button onclick="location.href ='project-page.php';" class="menuButton">Back</button>
+<br>
 
 <p>Updating the following information:</p>
 <?php if($row = $stmt->fetch()) { ?>
@@ -46,13 +47,13 @@ $stmt->execute();
         <label for = "projectName">Project name</label>
         <input type="text" name="projectName" id = "projectName" value=<?= $row["projectName"]?> required>
 
-        <label for = "yarnUsed">Yarn used</label>
+        <label for = "yarnUsed">Yarn used, enter each type of yarn separated by a comma</label>
         <input type="text" name="yarnUsed" id="yarnUsed" value=<?= $row["yarnUsed"]?> required>
 
-        <label for = "hoursSpent">Hours spent</label>
+        <label for = "hoursSpent">Hours spent, in number</label>
         <input type="text" name="hoursSpent" id="hoursSpent"  value=<?= $row["hoursSpent"]?> required>
 
-        <label for = "progress">Progress</label>
+        <label for = "progress">Progress, in percentage</label>
         <input type="text" name="progress" id="progress"  value=<?= $row["progress"]?> required>
 
         <label for = "notes">Notes</label>

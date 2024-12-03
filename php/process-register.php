@@ -3,7 +3,7 @@
 
 require_once "../include/dbsessions.php";
 include("../include/html-head.php");
-include("../include/menu-noLinks.php");
+include("../include/menu.php");
 
 $username = $_POST["regUsername"];
 $password = $_POST["regPassword"];
