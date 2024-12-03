@@ -1,23 +1,13 @@
 <?php
 //login form, also landing page
 
-require_once "dbsessions.php";
-include("html-head.php");
+require_once "../include/dbsessions.php";
+include("../include/html-head.php");
 
-
+include("../include/menu-noLinks.php");
 ?>
 
 <body>
-    
-    <h1>Agu's yarn stash</h1>
-
-    <div id="menu">
-    <img src="assets/mao.png">
-    <img src="assets/lineyarn.png">
-    </div>
-
-
-    <div id="message-container"></div>
 
     <article>
     <p>Welcome to Agu's yarn catalog system </p>
@@ -49,11 +39,11 @@ include("html-head.php");
 
 
     <?php
-    include ("footer.php");
+    include ("../include/footer.php");
     ?>
 
 
-<script src="login.js"></script>
+<script src="../js/login.js"></script>
     
 </body>
 </html>

@@ -1,8 +1,8 @@
 <?php
-//shows information to be deleted and confirmation 
+//shows yarn to be deleted 
 
-require_once "dbsessions.php";
-include("html-head.php");
+require_once "../include/dbsessions.php";
+include("../include/html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
@@ -21,17 +21,19 @@ $stmt->execute();
 
 <body>
 
-<?php include("menu.php"); ?>
+<?php include("../include/menu.php"); ?>
 
     <h1>Are you sure that you want to delete this entry?</h1>
     <article>
+    <a href="home.php">Back</a>
+    <br>
     <?php if($row = $stmt->fetch()) { ?>
-        <?= $row["yarnType"] ?>
-        <?= $row["yarnColor"] ?>
-        weight: <?= $row["yarnWeight"] ?>
-        quantity: <?= $row["quantity"] ?>
-        location: <?= $row["location"] ?>
-        dye lot: <?= $row["dyeLot"] ?>
+        Yarn: <?= $row["yarnType"] ?>
+        <br>Color: <?= $row["yarnColor"] ?>
+        <br>Weight: <?= $row["yarnWeight"] ?>
+        <br>Quantity: <?= $row["quantity"] ?>
+        <br>Location: <?= $row["location"] ?>
+        <br>Dye lot: <?= $row["dyeLot"] ?>
     <?php } ?>
 
 
@@ -46,10 +48,10 @@ $stmt->execute();
 
 
     <?php
-    include("footer.php");
+    include("../include/footer.php");
 
     }else{ 
-    include("access-denied.php");
+    include("../include/access-denied.php");
     }  
     ?>
 

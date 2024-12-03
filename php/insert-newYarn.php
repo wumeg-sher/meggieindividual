@@ -1,7 +1,8 @@
 <?php
+//page for user to add yarn information to be inserted to db
 
-require_once "dbsessions.php";
-include("html-head.php");
+require_once "../include/dbsessions.php";
+include("../include/html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
@@ -10,7 +11,7 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 <body>
 
-<?php include("menu.php"); ?>
+<?php include("../include/menu.php"); ?>
 
 <h1>Add new yarn</h1>
 
@@ -23,22 +24,22 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 <fieldset>
     <legend>New Yarn</legend>
 
-        <label for = "firstName">Yarn</label>
+        <label for = "yarn">Yarn</label>
         <input type="text" name="yarn" id = "yarn" placeholder="Yarn">
 
-        <label for = "lastName">Label for colour</label>
+        <label for = "color">Colour</label>
         <input type="text" name="color" id="color" placeholder="Colour">
 
-        <label for = "email">Label for weight</label>
+        <label for = "weight">Weight</label>
         <input type="text" name="weight" id="weight"  placeholder="Weight">
 
-        <label for = "quantity">Label for quantity</label>
+        <label for = "quantity">Quantity</label>
         <input type="text" name="quantity" id="quantity" placeholder="Quantity">
 
-        <label for = "location">Label for location</label>
+        <label for = "location">Location</label>
         <input type="text" name="location" id="location"  placeholder="Location">
 
-        <label for = "lastName">Label for dye lot</label>
+        <label for = "dyeLot">Dye lot</label>
         <input type="text" name="dyeLot" id="dyeLot" placeholder="Dye Lot">
 
 <input type="submit" value="Submit">
@@ -47,15 +48,14 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 
 <?php 
-    include("footer.php");
+    include("../include/footer.php");
     
     }else{ 
-    include("access-denied.php");
+    include("../include/access-denied.php");
     } 
 ?>
 
-
-<script src="insert-newYarn.js"></script>
+<script src="../js/insert-newYarn.js"></script>
     
 </body>
 </html>

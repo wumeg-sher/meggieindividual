@@ -1,8 +1,8 @@
 <?php 
 //process login
 
-require_once "dbsessions.php";
-include("html-head.php");
+require_once "../include/dbsessions.php";
+include("../include/html-head.php");
 
 $username=$_POST["username"];
 $password=$_POST["password"];
@@ -21,7 +21,7 @@ $stmt->execute();
 
 $row = $stmt->fetch();
 
-include("menu-noLinks.php");
+include("../include/menu-noLinks.php");
 
 if($row ){ 
     $_SESSION['loggedIn'] = true;
@@ -42,7 +42,7 @@ if($row ){
 
 
 <?php
-include ("footer.php")
+include ("../include/footer.php")
 ?>
 
     

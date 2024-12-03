@@ -1,9 +1,9 @@
 <?php
 //process registration of new user 
 
-require_once "dbsessions.php";
-include("html-head.php");
-include("menu-noLinks.php");
+require_once "../include/dbsessions.php";
+include("../include/html-head.php");
+include("../include/menu-noLinks.php");
 
 $username = $_POST["regUsername"];
 $password = $_POST["regPassword"];
@@ -53,7 +53,7 @@ $userCount = $stmt->fetchColumn();
 
 
 <?php
-include ("footer.php")
+include ("../include/footer.php")
 ?>
 
     

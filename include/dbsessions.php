@@ -5,7 +5,7 @@ $isLoggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
 $dsn = "mysql:host=localhost;dbname=yarn;charset=utf8mb4";
 $dbusername = "root";
-$dbpassword = "root";
+$dbpassword = "";
 
 // Use PDO to connect to the database
 try {
