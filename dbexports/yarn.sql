@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Dec 02, 2024 at 08:59 PM
--- Server version: 8.0.35
--- PHP Version: 8.2.20
+-- Host: 127.0.0.1
+-- Generation Time: Dec 04, 2024 at 02:36 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,15 +24,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `projects`
+--
+
+CREATE TABLE `projects` (
+  `projectId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `projectName` varchar(40) NOT NULL,
+  `yarnUsed` text NOT NULL,
+  `hoursSpent` int(11) NOT NULL,
+  `progress` int(11) NOT NULL,
+  `notes` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`projectId`, `userId`, `projectName`, `yarnUsed`, `hoursSpent`, `progress`, `notes`) VALUES
+(3, 1, 'striped scarf', 'King Cole DK pink, King Cole DK white', 2, 10, ''),
+(4, 1, 'granny', 'King', 0, 0, '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `userId` int NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
   `tier` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -40,9 +64,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userId`, `username`, `password`, `tier`) VALUES
 (1, 'agu', 'agu', 'admin'),
-(2, 'user1', 'user1', 'user'),
-(3, 'wah', '1111', 'user'),
-(4, 'meg', '1111', 'user');
+(2, 'user', 'user', 'user'),
+(3, 'cheem', '1111', 'user');
 
 -- --------------------------------------------------------
 
@@ -51,26 +74,34 @@ INSERT INTO `users` (`userId`, `username`, `password`, `tier`) VALUES
 --
 
 CREATE TABLE `yarn` (
-  `yarnId` int NOT NULL,
+  `yarnId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
   `yarnType` varchar(40) NOT NULL,
-  `yarnColor` varchar(30) NOT NULL,
-  `yarnWeight` int NOT NULL,
-  `quantity` int NOT NULL,
+  `yarnColor` varchar(40) NOT NULL,
+  `yarnWeight` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `location` varchar(20) NOT NULL,
-  `dyeLot` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `dyeLot` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `yarn`
 --
 
-INSERT INTO `yarn` (`yarnId`, `yarnType`, `yarnColor`, `yarnWeight`, `quantity`, `location`, `dyeLot`) VALUES
-(1, 'Stylecraft Wondersoft', 'White', 2, 5, 'Box 2', 33),
-(2, 'King Cole Baby DK', 'Pure Pink', 2, 7, 'Shelf 1', 244);
+INSERT INTO `yarn` (`yarnId`, `userId`, `yarnType`, `yarnColor`, `yarnWeight`, `quantity`, `location`, `dyeLot`) VALUES
+(1, 1, 'stylecraft', 'white', 2, 5, 'Box', 234),
+(3, 1, 'Sir Sirdar', 'yellow', 2, 1, 'Box 2', 235),
+(10, 1, 'stylecraft wondersoft', 'blue', 2, 5, 'Box', 234);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `projects`
+--
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`projectId`);
 
 --
 -- Indexes for table `users`
@@ -89,16 +120,22 @@ ALTER TABLE `yarn`
 --
 
 --
+-- AUTO_INCREMENT for table `projects`
+--
+ALTER TABLE `projects`
+  MODIFY `projectId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `yarn`
 --
 ALTER TABLE `yarn`
-  MODIFY `yarnId` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `yarnId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

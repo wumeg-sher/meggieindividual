@@ -22,11 +22,13 @@ $stmt->execute();
 <body>
 
 <?php include("../include/menu.php"); ?>
-
+<content>
 <h1>Update record</h1>
 
 <article>
 <button onclick="location.href ='home.php';" class="menuButton">Back</button>
+
+<p id="outputElement"></p>
 
 <p>Updating the following information:</p>
 <?php if($row = $stmt->fetch()) { ?>
@@ -43,10 +45,10 @@ $stmt->execute();
 
 
 <article>
-<form action="process-update.php" method="POST" name="form">
 
+<form action="process-updateYarn.php" method="POST" name="form">
 <fieldset>
-    <legend>Update Yarn</legend>
+    <legend><h3>Update Yarn</h3></legend>
 
         <label for = "yarn">Yarn</label>
         <input type="text" name="yarn" id = "yarn" value=<?= $row["yarnType"] ?> required>
@@ -61,16 +63,17 @@ $stmt->execute();
         <input type="text" name="quantity" id="quantity" value=<?= $row["quantity"] ?> required>
 
         <label for = "location">Location</label>
-        <input type="text" name="location" id="location"  value=<?= $row["location"] ?> required>
+        <input type="text" name="location" id="location"  value=<?= $row["location"] ?> >
 
         <label for = "dyeLot">Dye lot</label>
-        <input type="text" name="dyeLot" id="dyeLot" value=<?= $row["dyeLot"] ?> required>
+        <input type="text" name="dyeLot" id="dyeLot" value=<?= $row["dyeLot"] ?> >
 
     
-<input type="hidden" name="pid"  value=<?= $row["yarnId"] ?>>
-<input type="submit" value="Update">
+<input type="hidden" name="pid"  id="pid" value=<?= $row["yarnId"] ?>>
+<input type="submit" value="Update" id="submitButton">
 </fieldset>
 </article>
+</content>
 
 <?php 
 include("../include/footer.php");
@@ -80,7 +83,6 @@ include("../include/footer.php");
     } 
 ?>
 
-<script src="../js/updateYarn.js"></script>
     
 </body>
 </html>

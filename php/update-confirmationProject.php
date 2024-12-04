@@ -20,7 +20,7 @@ $stmt->execute();
 <body>
 
 <?php include("../include/menu.php"); ?>
-
+<content>
 <h1>Update record</h1>
 
 <article>
@@ -42,7 +42,7 @@ $stmt->execute();
 <article>
 <form action="process-updateProject.php" method="POST" name="form">
 <fieldset>
-    <legend>Update Project</legend>
+    <legend><h3>Update Project</h3></legend>
 
         <label for = "projectName">Project name</label>
         <input type="text" name="projectName" id = "projectName" value=<?= $row["projectName"]?> required>
@@ -51,18 +51,19 @@ $stmt->execute();
         <input type="text" name="yarnUsed" id="yarnUsed" value=<?= $row["yarnUsed"]?> required>
 
         <label for = "hoursSpent">Hours spent, in number</label>
-        <input type="text" name="hoursSpent" id="hoursSpent"  value=<?= $row["hoursSpent"]?> required>
+        <input type="text" name="hoursSpent" id="hoursSpent"  value=<?= $row["hoursSpent"]?> >
 
         <label for = "progress">Progress, in percentage</label>
-        <input type="text" name="progress" id="progress"  value=<?= $row["progress"]?> required>
+        <input type="text" name="progress" id="progress"  value=<?= $row["progress"]?> >
 
         <label for = "notes">Notes</label>
-        <input type="text" name="notes" id="notes" value=<?= $row["notes"]?> required>
+        <input type="text" name="notes" id="notes" value=<?= $row["notes"]?> >
     
 <input type="hidden" name="pid"  value=<?= $row["projectId"] ?>>
 <input type="submit" value="Update">
 </fieldset>
 </article>
+</content>
 
 <?php 
     include("../include/footer.php");
@@ -71,7 +72,7 @@ $stmt->execute();
         include("../include/access-denied.php");
     } 
 ?>
-    <script src="../js/updateProject.js"></script>
+
 </body>
 </html>
 

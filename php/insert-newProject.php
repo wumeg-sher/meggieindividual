@@ -13,6 +13,7 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 <?php include("../include/menu.php"); ?>
 
+<content>
 <h1>Add new project</h1>
 
 <article>
@@ -25,12 +26,12 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 <article>
 <fieldset>
-    <legend>New Project</legend>
+    <legend><h3>New Project</h3></legend>
 
         <label for = "projectName">Project name</label>
-        <input type="text" name="projectName" id = "projectName" placeholder="Project name">
+        <input type="text" name="projectName" id = "projectName" placeholder="Project name" required>
 
-        <label for = "yarnUsed">Yarn used, enter each type of yarn separated by a comma</label>
+        <label for = "yarnUsed">Yarn used, enter each type of yarn separated by a comma</label required>
         <input type="text" name="yarnUsed" id="yarnUsed" placeholder="Yarn used">
 
         <label for = "hoursSpent">Hours spent, in number</label>
@@ -45,6 +46,7 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
     <input type="submit" value="Submit" id="submitButton">
 </fieldset>
 </article>
+</content>
 
 <?php 
     include("../include/footer.php");

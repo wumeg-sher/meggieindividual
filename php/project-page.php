@@ -13,7 +13,7 @@ $userId = $_SESSION['userId'];
 <body>
 
 <?php include("../include/menu.php"); ?>
-
+<content>
 <h1>Project Page</h1>
 
     <article>
@@ -26,7 +26,7 @@ $userId = $_SESSION['userId'];
     </article>
 
     <div>
-    <table id="projectTable">
+    <table class="table" id="projectTable">
                 <thead>
                     <tr>
                         <th>Project</th>
@@ -42,7 +42,7 @@ $userId = $_SESSION['userId'];
             </table>
     </div>
 
-
+</content>
 <?php 
     include("../include/footer.php");
     

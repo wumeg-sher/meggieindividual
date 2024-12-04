@@ -10,7 +10,6 @@ $stmtGetYarn = $pdo->prepare ("SELECT `yarnId`, `yarnType`, `yarnColor`, `yarnWe
     WHERE `userId` = $userId;");
 
 
-
 $stmtGetYarn->execute(); 
 
 $yarnData = $stmtGetYarn->fetchAll(PDO::FETCH_ASSOC);

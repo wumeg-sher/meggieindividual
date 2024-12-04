@@ -1,4 +1,5 @@
 <?php 
+//inserts data from insertProject.js, does not display a page
 require_once "../include/dbsessions.php";
 
 $userId = $_SESSION['userId'];

@@ -6,27 +6,26 @@ include("../include/html-head.php");
 
 $pid = $_POST["pid"];
 
-
-//prepare
 $stmt = $pdo-> prepare("DELETE FROM `yarn` WHERE `yarn`.`yarnId` =$pid");
-
 
 include("../include/menu.php");
 
-//execute
+?> <content> <?php
 if($stmt->execute()){ ?>
+    <br>
     <article>Yarn record deleted!</article>
 <?php } else { ?>
-    <article>Error</article>
+    <br>
+    <article>Something went wrong, please try again later.</article>
 <?php }; ?>
-
 
 <body>
 
 <article>
-    <a href="home.php">Back</a>
+<button onclick="location.href ='home.php';" class="menuButton">Back</button>
 </article>
 
+</content>
 <?php include("../include/footer.php")?>
 
     

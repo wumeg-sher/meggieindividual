@@ -8,7 +8,7 @@ include("../include/menu-noLinks.php");
 ?>
 
 <body>
-
+    <content>
     <article>
     <h3>Welcome to Agu's yarn catalog system </h3>
     <p>This is where Agu takes stock of her yarn stash and projects so that she stops spending money on yarn </p>
@@ -26,18 +26,22 @@ include("../include/menu-noLinks.php");
     </fieldset>
 <br>
     <button id="showButton" class="loginButton">Register</button>
+    <br>
 
     <div id="registerForm">
+    <fieldset>
         <form action="process-register.php" method="POST">
-            <fieldset>
                 <h2>Register</h2>
                 <input type="text" name="regUsername" placeholder="Username" required>
                 <input type="text" name="regPassword" placeholder="Password" required>
                 <input type="text" name="regConfirmPassword" placeholder="Confirm password" required>
                 <input type="submit" class="loginButton">
-            </fieldset>
         </form>
+        </fieldset>
     </div>
+    <br>
+    <br>
+    </content>
 
 
     <?php

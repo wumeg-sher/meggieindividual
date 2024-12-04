@@ -22,9 +22,11 @@ $stmt->execute();
 
 <?php include("../include/menu.php"); ?>
 
+    <content>
     <h1>Are you sure that you want to delete this entry?</h1>
     <article>
     <button onclick="location.href ='project-page.php';" class="menuButton">Back</button>
+    <br>
     <br>
 
     <?php if($row = $stmt->fetch()) { ?>
@@ -44,6 +46,7 @@ $stmt->execute();
         <input type= "submit" value="YES">
     </form>
     </article>
+    </content>
 
 
     <?php

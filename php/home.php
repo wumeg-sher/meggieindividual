@@ -19,7 +19,7 @@ $stmt->execute();
 <body>
     
     <?php include("../include/menu.php"); ?>
-
+    <content>
     <h1>Yarn stash</h1>
 
     <article>
@@ -31,8 +31,8 @@ $stmt->execute();
     <button onclick="location.href ='project-page.php';" class="menuButton">Project page</button>
     </article>
 
-    <div>
-    <table id="yarnTable">
+    <div >
+    <table class="table" id="yarnTable">
                 <thead>
                     <tr>
                         <th>Yarn</th>
@@ -49,7 +49,7 @@ $stmt->execute();
             </table>
     </div>
 
-
+</content>
     <?php 
     include("../include/footer.php");
 

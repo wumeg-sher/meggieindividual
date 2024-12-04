@@ -10,7 +10,6 @@ $stmtGetProject = $pdo->prepare ("SELECT `projectId`, `projectName`, `yarnUsed`,
     WHERE `userId` = $userId;");
 
 
-
 $stmtGetProject->execute(); 
 
 $projectData = $stmtGetProject->fetchAll(PDO::FETCH_ASSOC);

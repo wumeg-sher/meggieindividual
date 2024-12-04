@@ -1,6 +1,11 @@
 let submitButton = document.getElementById('submitButton');
 
 submitButton.addEventListener("click", ()=>{
+    let cat = document.getElementById('cat');
+    let ball = document.getElementById('ball');
+    cat.classList.add('animate-headbutt');  
+    ball.classList.add('animate-ball'); 
+
     let projectName = document.getElementById('projectName').value;
     let yarnUsed = document.getElementById('yarnUsed').value;
     let hoursSpent = document.getElementById('hoursSpent').value;

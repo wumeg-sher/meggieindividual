@@ -18,14 +18,21 @@ $stmt->bindParam(':username', $username);
 $stmt->execute();
 $userCount = $stmt->fetchColumn();
 
+?> <content> <?php
 
     if ($password !== $confirmPassword) {
-        ?><article>Passwords to not match. Please try again.
-            <a href="login.php">Back</a>
+        ?>
+        <br>
+        <article>Passwords to not match. Please try again.
+        <br>
+        <button onclick="location.href ='login.php';" class="menuButton">Back</button>
         </article><?php
     } else if ($userCount > 0) {
-        ?><article>Username taken, please use a different username.
-            <a href="login.php">Back</a>
+        ?>        
+        <br>
+        <article>Username taken, please use a different username.
+        <br>
+        <button onclick="location.href ='login.php';" class="menuButton">Back</button>
         </article><?php
     } else {
     
@@ -42,12 +49,14 @@ $userCount = $stmt->fetchColumn();
     $_SESSION['username'] = $username;
     $_SESSION['tier'] = 'user'; 
     ?>
-    
-    <article>Successfully registered <?=$_SESSION['username'] ?>! 
-        <a href="home.php">Continue</a>
+    <br>
+    <article><h3>Successfully registered <?=$_SESSION['username'] ?>! <h3>
+    <br>
+    <button onclick="location.href ='home.php';" class="menuButton">Continue</button>
     </article>
 
     <?php } ?>
+    </content>
 
 <body>
 

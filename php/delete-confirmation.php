@@ -23,10 +23,12 @@ $stmt->execute();
 
 <?php include("../include/menu.php"); ?>
 
-    <h1>Are you sure that you want to delete this entry?</h1>
+    <content>
+    <h1>Are you sure that you want to delete this yarn entry?</h1>
     <article>
     <button onclick="location.href ='home.php';" class="menuButton">Back</button>
 
+    <br>
     <br>
     <?php if($row = $stmt->fetch()) { ?>
         Yarn: <?= $row["yarnType"] ?>
@@ -46,6 +48,7 @@ $stmt->execute();
         <input type= "submit" value="YES">
     </form>
     </article>
+    </content>
 
 
     <?php
