@@ -1,3 +1,4 @@
+// get information from form
 document.addEventListener("DOMContentLoaded", ()=>{
 let submitButton = document.getElementById('submitButton');
 
@@ -17,6 +18,8 @@ submitButton.addEventListener("click", (event)=>{
     let dyeLot = document.getElementById('dyeLot').value;
 
     console.log(yarnType, yarnColor, yarnWeight, quantity, location, dyeLot)
+
+    //  pass info to process-insertYarn to be added to db
     fetch('../php/process-insertYarn.php', {
         method: 'POST', 
         headers: {

@@ -44,7 +44,6 @@ $userCount = $stmt->fetchColumn();
     $stmt->bindParam(':password', $password);
     $stmt->execute(); 
 
-    // Set the session variables
     $_SESSION['loggedIn'] = true;
     $_SESSION['username'] = $username;
     $_SESSION['tier'] = 'user'; 

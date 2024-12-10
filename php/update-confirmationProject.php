@@ -5,16 +5,13 @@ include("../include/html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
-//URL data
+//get project to be updated
 $projectId=$_GET["pid"];
 
-//prepare
 $stmt = $pdo -> prepare("SELECT * FROM `projects` WHERE `projectId`=$projectId;");
 
-//execute
 $stmt->execute();
 
-//process 
 ?>
 
 <body>
@@ -27,6 +24,7 @@ $stmt->execute();
 <button onclick="location.href ='project-page.php';" class="menuButton">Back</button>
 <br>
 
+<!-- display info to be updated -->
 <p>Updating the following information:</p>
 <?php if($row = $stmt->fetch()) { ?>
     Project name: <?= $row["projectName"]?>
@@ -40,6 +38,7 @@ $stmt->execute();
 <br>
 
 <article>
+    <!-- form to collect update info -->
 <form action="process-updateProject.php" method="POST" name="form">
 <fieldset>
     <legend><h3>Update Project</h3></legend>

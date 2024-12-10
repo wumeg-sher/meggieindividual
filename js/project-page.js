@@ -1,3 +1,4 @@
+// make a table to display the project data
 document.addEventListener('DOMContentLoaded', ()=>{
     fetch('get-project.php', {
         method: 'POST',

@@ -5,14 +5,11 @@ include("../include/html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
-//recieve personId
+//recieve projectId of project to be deleted
 $projectId = $_GET["pid"];
 
-//prepare
 $stmt = $pdo-> prepare("SELECT * FROM `projects` WHERE `projectId` = $projectId;");
 
-
-//execute
 $stmt->execute();
 
 ?>
@@ -22,6 +19,7 @@ $stmt->execute();
 
 <?php include("../include/menu.php"); ?>
 
+<!-- display data of project to be deleted -->
     <content>
     <h1>Are you sure that you want to delete this entry?</h1>
     <article>

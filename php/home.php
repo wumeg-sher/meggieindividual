@@ -1,5 +1,5 @@
 <?php 
-//main page, displays yarn stash information
+//main page, displays yarn information
 
 require_once "../include/dbsessions.php";
 include("../include/html-head.php");
@@ -8,10 +8,8 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
 $userId = $_SESSION['userId'];
 
-//prepare
 $stmt = $pdo -> prepare("SELECT * FROM `yarn`;");
 
-//execute
 $stmt->execute();
 ?>
 

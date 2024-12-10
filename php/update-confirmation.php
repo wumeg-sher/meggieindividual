@@ -6,16 +6,13 @@ include("../include/html-head.php");
 
 if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 
-//URL data
+//get yarn to be updated
 $yarnId=$_GET["pid"];
 
-//prepare
 $stmt = $pdo -> prepare("SELECT * FROM `yarn` WHERE `yarnId`=$yarnId;");
 
-//execute
 $stmt->execute();
 
-//process 
 ?>
 
 
@@ -30,6 +27,7 @@ $stmt->execute();
 
 <p id="outputElement"></p>
 
+<!-- display info to be updated -->
 <p>Updating the following information:</p>
 <?php if($row = $stmt->fetch()) { ?>
     Yarn: <?= $row["yarnType"] ?>
@@ -45,7 +43,7 @@ $stmt->execute();
 
 
 <article>
-
+<!-- form to collect update info -->
 <form action="process-updateYarn.php" method="POST" name="form">
 <fieldset>
     <legend><h3>Update Yarn</h3></legend>

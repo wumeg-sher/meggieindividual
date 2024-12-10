@@ -1,3 +1,4 @@
+// make a table to display the yarn data
 document.addEventListener('DOMContentLoaded', ()=>{
     fetch('get-yarn.php', {
         method: 'POST',

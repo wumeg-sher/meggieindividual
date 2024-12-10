@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2024 at 02:36 AM
+-- Generation Time: Dec 10, 2024 at 06:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -42,8 +42,10 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`projectId`, `userId`, `projectName`, `yarnUsed`, `hoursSpent`, `progress`, `notes`) VALUES
-(3, 1, 'striped scarf', 'King Cole DK pink, King Cole DK white', 2, 10, ''),
-(4, 1, 'granny', 'King', 0, 0, '');
+(1, 1, 'waffle blanket', 'King Cole DK pink, King Cole DK white', 20, 90, 'finish border'),
+(2, 1, 'a', 'a', 1, 1, 'a'),
+(3, 1, 'a', 'a', 1, 1, 'a'),
+(9, 1, 'bolero shrug', 'stylecraft wondersoft', 2, 10, '');
 
 -- --------------------------------------------------------
 
@@ -53,9 +55,9 @@ INSERT INTO `projects` (`projectId`, `userId`, `projectName`, `yarnUsed`, `hours
 
 CREATE TABLE `users` (
   `userId` int(11) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `tier` varchar(10) NOT NULL
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `tier` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -64,8 +66,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userId`, `username`, `password`, `tier`) VALUES
 (1, 'agu', 'agu', 'admin'),
-(2, 'user', 'user', 'user'),
-(3, 'cheem', '1111', 'user');
+(2, 'guest', 'guest', 'user');
 
 -- --------------------------------------------------------
 
@@ -76,8 +77,8 @@ INSERT INTO `users` (`userId`, `username`, `password`, `tier`) VALUES
 CREATE TABLE `yarn` (
   `yarnId` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
-  `yarnType` varchar(40) NOT NULL,
-  `yarnColor` varchar(40) NOT NULL,
+  `yarnType` varchar(30) NOT NULL,
+  `yarnColor` varchar(20) NOT NULL,
   `yarnWeight` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `location` varchar(20) NOT NULL,
@@ -89,9 +90,12 @@ CREATE TABLE `yarn` (
 --
 
 INSERT INTO `yarn` (`yarnId`, `userId`, `yarnType`, `yarnColor`, `yarnWeight`, `quantity`, `location`, `dyeLot`) VALUES
-(1, 1, 'stylecraft', 'white', 2, 5, 'Box', 234),
-(3, 1, 'Sir Sirdar', 'yellow', 2, 1, 'Box 2', 235),
-(10, 1, 'stylecraft wondersoft', 'blue', 2, 5, 'Box', 234);
+(2, 1, 'King Cole DK', 'Pure pink', 2, 7, 'Box 2', 234536),
+(3, 1, 'Sir Sidar', 'Yellow', 2, 1, 'Box 1', 2343),
+(4, 1, 'Stylecraft wondersof', 'white', 2, 6, 'Box 2', 2345),
+(5, 1, 'paintbox', 'spearmine', 4, 1, 'box 3', 7246),
+(6, 1, 'drops', 'green', 3, 0, '', 0),
+(7, 2, 'bernat blanket', 'white', 6, 4, '', 0);
 
 --
 -- Indexes for dumped tables
@@ -123,19 +127,19 @@ ALTER TABLE `yarn`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `projectId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `projectId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `yarn`
 --
 ALTER TABLE `yarn`
-  MODIFY `yarnId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `yarnId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

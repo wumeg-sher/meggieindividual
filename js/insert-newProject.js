@@ -1,3 +1,4 @@
+// get information from form and 
 let submitButton = document.getElementById('submitButton');
 
 submitButton.addEventListener("click", ()=>{
@@ -13,6 +14,8 @@ submitButton.addEventListener("click", ()=>{
     let notes = document.getElementById('notes').value;
 
     console.log(projectName, yarnUsed, hoursSpent, progress, notes)
+    
+    //pass info to process-insertProject to be added to db
     fetch('../php/process-insertProject.php', {
         method: 'POST', 
         headers: {

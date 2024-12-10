@@ -15,7 +15,8 @@ include("../include/menu-noLinks.php");
     <p>You are welcome to register with this site to make use of the catalog to keep track of your own yarn and projects as well </p>
     <p>Please sign in to use this site </p>
     </article>
-    
+
+    <!-- login form -->
     <fieldset>
     <form action="process-login.php" method="POST">
         <h2>Login</h2>
@@ -24,10 +25,13 @@ include("../include/menu-noLinks.php");
         <input type="submit">
     </form>
     </fieldset>
-<br>
+    <br>
+
+<!-- toggle register form button -->
     <button id="showButton" class="loginButton">Register</button>
     <br>
 
+<!-- register form -->
     <div id="registerForm">
     <fieldset>
         <form action="process-register.php" method="POST">

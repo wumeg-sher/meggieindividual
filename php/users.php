@@ -19,6 +19,7 @@ $stmt->execute();
 </article>
 
 <article>
+<!-- show the users registered to the site  -->
 <ul>
     <?php
      while($row = $stmt-> fetch()) {
