@@ -1,4 +1,4 @@
-<img src="../assets/duck.png">
+<img id="duck" src="../assets/duck.png">
     <p>This page is protected by Mister Duck.</p>
     <h1>Access denied, please log in to see this page<h1>
     <article> 
@@ -8,3 +8,7 @@
         <p>Or else Mister Duck will get you.</p>
 
     </article>
+
+    <?php
+    include ("../include/footer.php");
+    ?>

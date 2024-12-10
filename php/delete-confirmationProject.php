@@ -38,7 +38,7 @@ $stmt->execute();
     <?php } ?>
 
 
-    <form action="home.php" method="">
+    <form action="project-page.php" method="">
         <input type= "submit" value="NO">
     </form>
     <form action="delete-project.php" method="POST">

@@ -20,7 +20,6 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']==true ){
 <button onclick="location.href ='home.php';" class="menuButton">Back</button>
 </article>
 <br>
-<button id="target">Animate</button>
 
 <p id="outputElement"></p>
 

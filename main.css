@@ -1,3 +1,4 @@
+/* main display */
 body {
   font-family: "Quicksand", "sans-serif";
 
@@ -11,6 +12,8 @@ content{
   margin-left: 10%;
   margin-right: 10%;
 }
+
+
 
 /*header/footer items */
 #menupics {
@@ -51,7 +54,13 @@ content{
 .title{
   padding: 5px;
 }
+
+#duck{
+  width: 150px;
+  height: 150px;
+}
 /* end header/footer items */
+
 
 
 /* form items */
@@ -124,13 +133,14 @@ input[type="submit"]:hover {
 
 /* about images */
 .aboutImgs{
-  width: 30%;
-  height: 30%;
+  width: 25%;
+  height: 25%;
+  border-radius: 10%;
 }
 
 #shelfimg{
-  width: 44%;
-  height: 44%;
+  width: 37%;
+  height: 37%;
 }
 /* about images end */
 
@@ -157,7 +167,7 @@ input[type="submit"]:hover {
 /* end tables */
 
 
-
+/* users formatting*/
 ul {
   background-color: white;
   border-radius: 10px;
@@ -196,7 +206,7 @@ ul {
 
 
 #ball {
-  position: relative;         
+  position: relative;
 }
 
 .animate-ball {

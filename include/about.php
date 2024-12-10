@@ -11,6 +11,7 @@ include("../include/menu.php");
 
     <img class="aboutImgs" id="shelfimg" src="../assets/yarnshelf.png">
     <img class="aboutImgs" src="../assets/criminal.jpg">
+    <img class="aboutImgs" src="../assets/cheem.jpg">
     <p>This project came about because of a problem I had. I am a crocheter and I have a cat. 
         I also have a tendency to eject information about something from my brain as 
         soon as I do not see it. The former two parts of my problem mean that I have a lot of yarn that I
